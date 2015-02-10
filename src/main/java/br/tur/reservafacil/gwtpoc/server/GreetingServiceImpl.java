@@ -1,7 +1,8 @@
 package br.tur.reservafacil.gwtpoc.server;
 
-import br.tur.reservafacil.gwtpoc.client.GreetingService;
+import br.tur.reservafacil.gwtpoc.client.service.GreetingService;
 import br.tur.reservafacil.gwtpoc.shared.FieldVerifier;
+
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**

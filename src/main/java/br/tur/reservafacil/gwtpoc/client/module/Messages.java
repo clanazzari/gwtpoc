@@ -1,4 +1,4 @@
-package br.tur.reservafacil.gwtpoc.client;
+package br.tur.reservafacil.gwtpoc.client.module;
 
 public interface Messages extends com.google.gwt.i18n.client.Messages {
   

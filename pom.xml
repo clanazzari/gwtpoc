@@ -59,6 +59,7 @@
   </dependencies>
 
   <build>
+  	<finalName>gwtpoc</finalName>
     <!-- Output classes directly into the webapp, so that IDEs and "mvn process-classes" update them in DevMode -->
     <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
 
@@ -83,7 +84,7 @@
         <configuration>
           <runTarget>reserva.html</runTarget>
           <modules>
-            <module>br.tur.reservafacil.gwtpoc.reserva</module>
+            <module>br.tur.reservafacil.gwtpoc.ReservaModule</module>
           </modules>
         </configuration>
       </plugin>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to="reserva">
   <!-- Inherit our applications main module.                      -->
-  <inherits name='br.tur.reservafacil.gwtpoc.reserva' />
+  <inherits name='br.tur.reservafacil.gwtpoc.ReservaModule' />
 
   <!-- Specify the path to any remote services.                   -->
   <servlet path="/reserva/greet" class="br.tur.reservafacil.gwtpoc.server.GreetingServiceImpl" />

@@ -1,6 +1,9 @@
-package br.tur.reservafacil.gwtpoc.client;
+package br.tur.reservafacil.gwtpoc.client.module;
 
+import br.tur.reservafacil.gwtpoc.client.GreetingServiceAsync;
+import br.tur.reservafacil.gwtpoc.client.service.GreetingService;
 import br.tur.reservafacil.gwtpoc.shared.FieldVerifier;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -20,7 +23,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class reserva implements EntryPoint {
+public class ReservaModule implements EntryPoint {
   /**
    * The message displayed to the user when the server cannot be reached or
    * returns an error.

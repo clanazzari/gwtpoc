@@ -1,6 +1,8 @@
 package br.tur.reservafacil.gwtpoc.client;
 
+import br.tur.reservafacil.gwtpoc.client.service.GreetingService;
 import br.tur.reservafacil.gwtpoc.shared.FieldVerifier;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -16,13 +18,13 @@ import com.google.gwt.user.client.rpc.ServiceDefTarget;
  * See http://mojo.codehaus.org/gwt-maven-plugin/user-guide/testing.html 
  * for details.
  */
-public class GwtTestreserva extends GWTTestCase {
+public class GwtTestReserva extends GWTTestCase {
 
   /**
    * Must refer to a valid module that sources this class.
    */
   public String getModuleName() {
-    return "br.tur.reservafacil.gwtpoc.reservaJUnit";
+    return "br.tur.reservafacil.gwtpoc.ReservaJUnit";
   }
 
   /**
