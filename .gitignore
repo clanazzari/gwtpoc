@@ -7,6 +7,6 @@ target/
 ###################
 # Ignore  Files #
 ###################
-.classpath
-.project
+*.classpath
+*.project
 
