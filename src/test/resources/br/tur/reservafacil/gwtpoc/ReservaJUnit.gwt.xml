@@ -4,6 +4,6 @@
   <inherits name='br.tur.reservafacil.gwtpoc.ReservaModule' />
 
   <!-- Specify the path to any remote services.                   -->
-  <servlet path="/reserva/greet" class="br.tur.reservafacil.gwtpoc.server.GreetingServiceImpl" />
+  <servlet path="/reserva/greet" class="br.tur.reservafacil.gwtpoc.server.ReservaServiceImpl" />
 
 </module>

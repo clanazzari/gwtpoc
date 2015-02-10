@@ -6,14 +6,14 @@
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
   <!-- any one of the following lines.                            -->
-  <inherits name='com.google.gwt.user.theme.standard.Standard' />
+  <inherits name='com.google.gwt.user.theme.standard.Standard' /> 
   <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='br.tur.reservafacil.gwtpoc.client.ReservaModule' />
+  <entry-point class='br.tur.reservafacil.gwtpoc.client.module.ReservaModule' />
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client' />
