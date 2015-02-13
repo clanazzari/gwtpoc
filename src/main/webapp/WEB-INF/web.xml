@@ -13,23 +13,13 @@
   </servlet> 
 
   <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>br.tur.reservafacil.gwtpoc.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>reservaService</servlet-name>
+    <servlet-name>reservaServlet</servlet-name>
     <servlet-class>br.tur.reservafacil.gwtpoc.server.ReservaServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/reserva/greet</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>reservaService</servlet-name>
-    <url-pattern>/reserva/serv</url-pattern>
+    <servlet-name>reservaServlet</servlet-name>
+    <url-pattern>/reserva/service</url-pattern>
   </servlet-mapping>
 
   <!-- Default page to serve -->

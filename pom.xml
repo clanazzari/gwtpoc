@@ -89,12 +89,11 @@
             </goals>
           </execution>
         </executions>
-        <!-- Plugin configuration. There are many available options, see 
-          gwt-maven-plugin documentation at codehaus.org -->
+
         <configuration>
           <runTarget>reserva/list.html</runTarget>
           <modules>
-            <module>br.tur.reservafacil.gwtpoc.ReservaModule</module>
+            <module>br.tur.reservafacil.gwtpoc.Reserva</module>
           </modules>
         </configuration>
       </plugin>

@@ -24,10 +24,11 @@ public class InitDatabase extends HttpServlet {
 
             // CREATE TABLE
             stm.executeUpdate("CREATE TABLE PUBLIC.TB_RESERVA (ID INTEGER, NOME VARCHAR(200), TIPO VARCHAR(20), PRIMARY KEY (ID));");
+            stm.executeUpdate("CREATE SEQUENCE PUBLIC.SQ_RESERVA AS INTEGER START WITH 1 INCREMENT BY 1");
 
             // INSERT
-            stm.executeUpdate("INSERT INTO PUBLIC.TB_RESERVA VALUES (1, 'Primeira reserva', 'hotel')");
-            stm.executeUpdate("INSERT INTO PUBLIC.TB_RESERVA VALUES (2, 'Segunda reserva', 'passagem')");
+            stm.executeUpdate("INSERT INTO PUBLIC.TB_RESERVA VALUES (NEXT VALUE FOR PUBLIC.SQ_RESERVA, 'Primeira reserva', 'hotel');");
+            stm.executeUpdate("INSERT INTO PUBLIC.TB_RESERVA VALUES (NEXT VALUE FOR PUBLIC.SQ_RESERVA, 'Segunda reserva', 'passagem');"); 
 
         } catch (SQLException e) {
             throw new ServletException(e);

@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+jarsExcludedFromWebInfLib=
+lastWarOutDir=/home/claudio/projetos/gwtpoc/target
+launchConfigExternalUrlPrefix=/srv/tomcat/
+warSrcDir=target/gwtpoc
+warSrcDirIsOutput=true
