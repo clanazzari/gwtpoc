@@ -1,4 +1,4 @@
-package br.tur.reservafacil.gwtpoc.shared.vo;
+package br.tur.reservafacil.gwtpoc.shared;
 
 import java.io.Serializable;
 

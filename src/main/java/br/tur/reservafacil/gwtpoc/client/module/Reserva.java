@@ -3,13 +3,16 @@ package br.tur.reservafacil.gwtpoc.client.module;
 import java.util.List;
 
 import br.tur.reservafacil.gwtpoc.client.service.ReservaServiceAsync;
-import br.tur.reservafacil.gwtpoc.shared.vo.ReservaVO;
+import br.tur.reservafacil.gwtpoc.client.util.Messages;
+import br.tur.reservafacil.gwtpoc.client.util.ResourceBundle;
+import br.tur.reservafacil.gwtpoc.shared.ReservaVO;
 
 import com.google.gwt.cell.client.ButtonCell;
 import com.google.gwt.cell.client.EditTextCell;
 import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.cellview.client.CellTable;
@@ -40,25 +43,28 @@ public class Reserva implements EntryPoint {
 	// fields
 	final TextBox nameField = new TextBox();
 	final TextBox tipoField = new TextBox();
+	final FlowPanel flowPanel = new FlowPanel();
+
+	// Constants
+	private final Messages messages = GWT.create(Messages.class);
 
 	/**
 	 * On Load
 	 */
 	public void onModuleLoad() {
-		HTMLPanel panel = new HTMLPanel ("h1", "Reserva Facil");
-//		ResourceBundle.INSTANCE.css().ensureInjected();
-		
-		RootPanel.get().add(panel);
+		ResourceBundle.INSTANCE.css().ensureInjected();
+		flowPanel.add(new HTMLPanel ("h1", messages.labelReservaFacil()));
+		flowPanel.setStyleName(ResourceBundle.INSTANCE.css().center());
 
 		// Carrega lista de reservas
-		logJs("Carrega lista de resekfkfkrvas");
+		logJs("Log Javasc ript");
 		this.carregarLista();
 
 		// Carrega Form de nova reserva
 		this.carregarFormReserva(); 
   
 		// formulario de inclusao
-		final Button btNovo = new Button("Novo");
+		final Button btNovo = new Button(messages.buttonNew());
 		btNovo.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -66,8 +72,10 @@ public class Reserva implements EntryPoint {
 				boxNovaReserva.center();
 			}
 		});
+//		btNovo.addStyleName(ResourceBundle.INSTANCE.css().buttonInsert());
 
-		RootPanel.get().add(btNovo);
+		flowPanel.add(btNovo);
+		RootPanel.get().add(flowPanel);
 	}
 
 	private native void logJs(String mensagem)/*-{
@@ -79,17 +87,17 @@ public class Reserva implements EntryPoint {
 	 */
 	private void carregarFormReserva() {
 
-		nameField.setName("Nome");
-		tipoField.setName("Tipo"); 
-		boxNovaReserva.setText("Nova Reserva: ");
+		nameField.setName(messages.labelName());
+		tipoField.setName(messages.labelType()); 
+		boxNovaReserva.setText(messages.buttonNew());
 
-		panelNovaReserva.add(new Label("Nome"));
+		panelNovaReserva.add(new Label(messages.labelName()));
 		panelNovaReserva.add(nameField);
 
-		panelNovaReserva.add(new Label("Tipo"));
+		panelNovaReserva.add(new Label(messages.labelType()));
 		panelNovaReserva.add(tipoField);
 
-		final Button btAdicionar = new Button("Adicionar", new ClickHandler() {
+		final Button btAdicionar = new Button(messages.buttonAdd(), new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				ReservaServiceAsync.Util.getInstance().inserir(
 						nameField.getValue(), tipoField.getValue(),
@@ -116,7 +124,7 @@ public class Reserva implements EntryPoint {
 			}
 		});
 
-		final Button btFechar = new Button("Fechar", new ClickHandler() {
+		final Button btFechar = new Button(messages.buttonClose(), new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				boxNovaReserva.hide();
 			}
@@ -158,12 +166,12 @@ public class Reserva implements EntryPoint {
 		Column<ReservaVO, String> buttonColumn = new Column<ReservaVO, String>(new ButtonCell()) {
 			@Override
 			public String getValue(ReservaVO object) {
-				return "deletar";
+				return messages.buttonRemove();
 			}
 		};
-		cellTable.addColumn(idColumn, "ID");
-		cellTable.addColumn(nameColumn, "Nome Cliente");
-		cellTable.addColumn(tipoColumn, "Tipo Reserva");
+		cellTable.addColumn(idColumn, messages.labelId());
+		cellTable.addColumn(nameColumn, messages.labelName());
+		cellTable.addColumn(tipoColumn, messages.labelType());
 		cellTable.addColumn(buttonColumn, " ");
 
 		// remove registro
@@ -254,7 +262,7 @@ public class Reserva implements EntryPoint {
 		dataProvider.refresh();
 
 		// Adiciona GRID na pagina
-		RootPanel.get().add(cellTable);
+		flowPanel.add(cellTable);
 	}
 
 	private final void mensagemErro(Throwable t) {
@@ -262,7 +270,7 @@ public class Reserva implements EntryPoint {
 		dialogBox.setAnimationEnabled(true);
 		dialogBox.setText(t.getMessage());
 		dialogBox.center();
-		final Button closeButton = new Button("Close");
+		final Button closeButton = new Button(messages.buttonClose());
 		closeButton.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				dialogBox.hide();

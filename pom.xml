@@ -62,6 +62,11 @@
 		<version>2.3.2</version>
 	</dependency>
 	<dependency>
+		<groupId>org.gwtbootstrap3</groupId>
+		<artifactId>gwtbootstrap3</artifactId>
+		<version>0.9-SNAPSHOT</version>
+	</dependency>
+	<dependency>
 	   <groupId>org.hibernate</groupId>
 	   <artifactId>hibernate-core</artifactId>
 	   <version>4.3.8.Final</version>
@@ -83,15 +88,17 @@
         <executions>
           <execution>
             <goals>
-              <goal>compile</goal>
-              <goal>test</goal>
-              <goal>generateAsync</goal>
+ 			   <goal>i18n</goal>
+               <goal>compile</goal>
+               <goal>test</goal>
+               <goal>generateAsync</goal>
             </goals>
           </execution>
         </executions>
 
         <configuration>
           <runTarget>reserva/list.html</runTarget>
+		  <i18nConstantsBundle>br.tur.reservafacil.gwtpoc.client.util.Messages</i18nConstantsBundle>
           <modules>
             <module>br.tur.reservafacil.gwtpoc.Reserva</module>
           </modules>

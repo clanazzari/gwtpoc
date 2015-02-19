@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.tur.reservafacil.gwtpoc.client.service.ReservaService;
-import br.tur.reservafacil.gwtpoc.shared.vo.ReservaVO;
+import br.tur.reservafacil.gwtpoc.shared.ReservaVO;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -20,7 +20,7 @@ public class ReservaServiceImpl extends RemoteServiceServlet implements
 
 	public List<ReservaVO> listarTodos() throws IllegalArgumentException {
 
-		List<ReservaVO> lista = new ArrayList<ReservaVO>(); 
+		List<ReservaVO> lista = new ArrayList<ReservaVO>();
 		try {
 			Statement stmt = InitDatabase.conn.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM PUBLIC.TB_RESERVA");

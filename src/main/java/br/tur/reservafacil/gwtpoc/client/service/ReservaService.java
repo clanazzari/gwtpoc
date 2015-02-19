@@ -2,7 +2,7 @@ package br.tur.reservafacil.gwtpoc.client.service;
 
 import java.util.List;
 
-import br.tur.reservafacil.gwtpoc.shared.vo.ReservaVO;
+import br.tur.reservafacil.gwtpoc.shared.ReservaVO;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;

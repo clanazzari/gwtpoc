@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to='reserva'>
-  <!-- Inherit the core Web Toolkit stuff.                        -->
-  <inherits name='com.google.gwt.user.User' />
-  <inherits name='com.google.gwt.resources.Resources'/> 
-  
-  <!-- Inherit the default GWT style sheet.  You can change       -->
-  <!-- the theme of your GWT application by uncommenting          -->
-  <!-- any one of the following lines.                            -->
-  <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> 
-  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
-  <!-- Other module inherits                                      -->
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.resources.Resources' />
 
-  <!-- Specify the app entry point class.                         -->
-  <entry-point class='br.tur.reservafacil.gwtpoc.client.module.Reserva' />
+	<!-- Template -->
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome' /> -->
 
-  <!-- Specify the paths for translatable code                    -->
-  <source path='client' />
-  <source path='shared' />
+	<!-- Specify the app entry point class. -->
+	<entry-point class='br.tur.reservafacil.gwtpoc.client.module.Reserva' />
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='shared' />
 
 </module>
